@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: main-rules-alert-config
+  namespace: monitoring
+spec:
+  receivers:
+  - name: 'email'
+    emailConfigs:
+    - to: 'sadi.shihab@gmail.com'
+      from: 'sadi.shihab@gmail.com'
+      smarthost: 'smtp.gmail.com:587'
+      authUsername: 'sadi.shihab@gmail.com'
+      authIdentity: 'sadi.shihab@gmail.com'
+      authPassword:
+        name: gmail-auth
+        key: password
